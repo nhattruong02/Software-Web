@@ -1,3 +1,4 @@
+\\CMD
 sfc /scannow
 DISM.exe /Online /Cleanup-Image /RestoreHealth
 \\ Bỏ qua microsoft window shift + F10
