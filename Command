@@ -1,5 +1,12 @@
-\\CMD
+\\ CMD
 sfc /scannow
 DISM.exe /Online /Cleanup-Image /RestoreHealth
 \\ Bỏ qua microsoft window shift + F10
 start ms-cxh:localonly
+\\ EXPORT AND IMPORT DRIVER
+dism /online /export-driver /destination:[D:\Backup]
+dism /online /Add-Driver /Driver:[D:\Backup] /Recurse hoặc add all trong device manager
+\\ Đổi ngày tháng file trên máy tính vào Window PowerShell
+$path = "C:\Users\TruongMN\Desktop\Learning\pr_2025-05-15-03-43.xlsx"
+$date = [datetime]::ParseExact("31/05/2025 10:57", "dd/MM/yyyy HH:mm", $null)
+(Get-Item $path).LastWriteTime = $date
